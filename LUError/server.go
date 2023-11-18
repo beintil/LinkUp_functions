@@ -12,8 +12,9 @@ func New(code int, message string) Error {
 	return e
 }
 
-func (l *LError) HTTP(code int) {
+func (l *LError) HTTP(code int) Error {
 	l.httpCode = code
+	return l
 }
 
 func (l *LError) Error() string {
