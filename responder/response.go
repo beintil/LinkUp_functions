@@ -24,7 +24,7 @@ func SendJSONResponse(w http.ResponseWriter, e LUError.Error, data interface{}) 
 
 func sendOkResponse(w http.ResponseWriter, data interface{}) {
 	response := APIResponse{
-		Success: false,
+		Success: true,
 		Data:    data,
 	}
 	w.Header().Set("Content-Type", "application/json")
