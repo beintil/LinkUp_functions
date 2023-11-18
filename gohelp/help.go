@@ -1,7 +1,9 @@
 package gohelp
 
 // Ptr returns a pointer to the value
-func Ptr[T any](v T) *T { return &v }
+func Ptr[T any](v T) *T {
+	return &v
+}
 
 // RemoveElement removes the element from the slice for according to the received index
 func RemoveElement[T any](slice []T, index int) []T {
