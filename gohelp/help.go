@@ -1,12 +1,12 @@
 package gohelp
 
 // Ptr returns a pointer to the value
-func Ptr[T any](v T) *T {
+func Ptr[T interface{}](v T) *T {
 	return &v
 }
 
 // RemoveElement removes the element from the slice for according to the received index
-func RemoveElement[T any](slice []T, index int) []T {
+func RemoveElement[T interface{}](slice []T, index int) []T {
 	if index < 0 || index > len(slice) {
 		return slice
 	}
