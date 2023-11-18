@@ -1,39 +1,38 @@
 package LUError
 
 type LError struct {
-	ErrorCode   int
-	Message     string
-	HttpCode    int
-	Description string
+	errorCode   int
+	message     string
+	httpCode    int
+	description string
 }
 
-func (l *LError) New(code int, message string) Error {
-	l.ErrorCode = code
-	l.Message = message
-	return l
+func New(code int, message string) Error {
+	e := &LError{errorCode: code, message: message}
+	return e
 }
 
 func (l *LError) HTTP(code int) {
-	l.HttpCode = code
+	l.httpCode = code
 }
 
 func (l *LError) Error() string {
-	return l.Message
+	return l.message
 }
 
 func (l *LError) HTTPCode() int {
-	return l.HttpCode
+	return l.httpCode
 }
 
 func (l *LError) LUErrorCode() int {
-	return l.ErrorCode
+	return l.errorCode
 }
 
 func (l *LError) SetDescription(description string) Error {
-	l.Description = description
+	l.description = description
 	return l
 }
 
 func (l *LError) GetDescription() string {
-	return l.Description
+	return l.description
 }
