@@ -5,4 +5,6 @@ type Error interface {
 	LUErrorCode() int
 	HTTP(code int) Error
 	HTTPCode() int
+	SetDescription(description string) Error
+	GetDescription() string
 }
