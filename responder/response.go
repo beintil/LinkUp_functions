@@ -2,8 +2,8 @@ package responder
 
 import (
 	"encoding/json"
-	"github.com/beintil/LinkUp_function/LUError"
 	"net/http"
+	"service-functions/LUError"
 )
 
 // APIResponse представляет собой общий формат API-ответа.
