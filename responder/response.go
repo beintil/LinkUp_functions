@@ -10,7 +10,7 @@ import (
 type APIResponse struct {
 	Success bool        `json:"success"`
 	Data    interface{} `json:"data"`
-	Error   string      `json:"error"`
+	Error   string      `json:"error,omitempty"`
 }
 
 func SendJSONResponse(w http.ResponseWriter, e LUError.Error, data interface{}) {
